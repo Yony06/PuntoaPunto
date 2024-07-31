@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:PuntoaPunto.model"
+             x:Class="PuntoaPunto.MainPage">
+
+    <ContentPage.BindingContext>
+        <viewmodel:Distancia />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Label
+                Text="Calcular la distancia entre dos puntos"
+                FontSize="30"
+                FontAttributes="Italic"
+                TextColor="White"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Text="{Binding P1}"
+                Placeholder="Ingrese x1"
+                Keyboard="Numeric"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Text="{Binding P2}"
+                Placeholder="Ingrese y1"
+                Keyboard="Numeric"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Text="{Binding P3}"
+                Placeholder="Ingrese x2"
+                Keyboard="Numeric"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+            <Entry
+                Text="{Binding P4}"
+                Placeholder="Ingrese y2"
+                Keyboard="Numeric"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+            <Button
+                Text="Calcular"
+                Command="{Binding CalcularDistanciaCommand}"
+                BackgroundColor="CornflowerBlue"
+                TextColor="White"
+                FontAttributes="Bold"
+                WidthRequest="250"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="{Binding Total}"
+                FontSize="18"
+                TextColor="DarkGreen"
+                HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
